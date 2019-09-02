@@ -2,7 +2,7 @@
 
 1. 使用OllyDbg打开程序后，暂停在位置：FE12C8，此处是程序执行的起始位置，EP（入口点），是一段程序的EP代码，call与jump指令
 
-![1566993764828](C:\Users\王渤\AppData\Roaming\Typora\typora-user-images\1566993764828.png)
+![1566993764828](..\noteimage\1566993764828.png)
 
 2. 使用F7（step in）执行call指令，进入到被调用函数内部，FE1748，是被调用函数的第一条指令
 
