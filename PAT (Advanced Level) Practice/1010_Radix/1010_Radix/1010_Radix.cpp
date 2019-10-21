@@ -16,7 +16,7 @@ int char2int(int i) {
 
 long long str2int(string s, long long radix) {
 	long long sum = 0;
-	int r = 1;
+	long long r = 1;
 	while (!s.empty()) {
 		sum += char2int(s.back()) * r;
 		r *= radix;
@@ -27,12 +27,12 @@ long long str2int(string s, long long radix) {
 
 long long calradix(string s, long long n) {
 	long long radix = 0;
-	long long low = char2int(*max_element(s.begin(), s.end()));
+	long long low = char2int(*max_element(s.begin(), s.end())) + 1;
 	long long high = max(low, n);
 	while (low <= high) {
 		long long mid = (low + high) / 2;
 		long long temp = str2int(s, mid);
-		if (temp < 0 || temp > n) {
+		if (temp < 0 || temp > n) {            //考虑溢出
 			high = mid - 1;
 		}
 		else if (temp < n) {
