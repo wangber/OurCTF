@@ -23,15 +23,17 @@ bool cmp(const Record &a, const Record &b) {
 	return a.time < b.time;
 }
 
+/*
 void time_and_bill_one_day(int start_h, int start_min, int end_h, int end_min, int &time, int &bill) {
 	time = (end_h - start_h) * 60 - start_min + end_min;
 	bill = 0;
-	bill += (60 - start_min)*toll[start_h];
-	for (int i = start_h + 1; i < end_h; ++i) {
+	bill += (-start_min)*toll[start_h];
+	for (int i = start_h; i < end_h; ++i) {
 		bill += toll[i] * 60;
 	}
 	bill += end_min * toll[end_h];
 }
+*/
 
 void get_time_and_bill(string on_time, string out_time, int &time, int &bill) {
 	/*
